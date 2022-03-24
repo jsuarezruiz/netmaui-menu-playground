@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MenuPlayground.MainPage"
+    Title=".NET MAUI MenuBar Playground">
+    <ContentPage.MenuBarItems>
+        <MenuBarItem
+            Text="First MenuBarItem">
+            <MenuFlyoutItem  
+                IconImageSource="home.png"
+                Text="First MenuFlyoutItem"
+                Clicked="OnMenuItemClicked" />
+        </MenuBarItem>
+        <MenuBarItem 
+            Text="Second MenuBarItem">
+            <MenuFlyoutItem
+                Clicked="OnMenuItemClicked"
+                Text="Second MenuFlyoutItem">
+            </MenuFlyoutItem>
+        </MenuBarItem>
+        <MenuBarItem 
+            Text="Third MenuBarItem">
+            <MenuFlyoutItem 
+                Clicked="OnMenuItemClicked" 
+                Text="Third MenuFlyoutItem" />
+            <MenuFlyoutSubItem 
+                Clicked="OnMenuItemClicked" 
+                Text="Sub Menu">
+                <MenuFlyoutItem 
+                    Clicked="OnMenuItemClicked" 
+                    Text="First MenuFlyoutItem" />
+                <MenuFlyoutItem
+                    Clicked="OnMenuItemClicked"
+                    Text="Second MenuFlyoutItem" />
+            </MenuFlyoutSubItem>
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
+    <ContentPage.Content>
+        <Grid 
+            RowDefinitions="Auto, *"
+            Margin="12">
+            <Button 
+                Text="Toggle Menu Bar Item" 
+                Clicked="ToggleMenuBarItem"/>
+            <Label
+                x:Name="MenuLabel" 
+                Grid.Row="1"
+                FontSize="24"
+                HorizontalOptions="Center"
+                Text="You clicked on Menu Item:"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
